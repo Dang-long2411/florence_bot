@@ -49,6 +49,10 @@
       </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="chassis">
+      <material>Gazebo/Blue</material> 
+    </gazebo>  
+
     <!-- LEFT WHEEL -->
     <joint name="left_wheel_joint" type="continuous">
       <parent link="base_link"/>
@@ -73,6 +77,10 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </xacro:inertial_cylinder>
     </link>
+
+    <gazebo reference="left_wheel">
+      <material>Gazebo/Black</material>
+    </gazebo>
 
 
     <!-- RIGHT WHEEL -->
@@ -100,6 +108,10 @@
       </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="right_wheel">
+      <material>Gazebo/Black</material>
+    </gazebo>
+
 
     <!-- CASTER WHEEL 1-->
     <joint name ="caster_wheel_1_joint" type="fixed">
@@ -111,13 +123,13 @@
     <link name="caster_wheel_1">
       <visual>
         <geometry>
-          <sphere radius="0.04"/>
+          <sphere radius="0.05"/>
         </geometry>
         <material name="orange"/> 
       </visual>
       <collision>
         <geometry>
-          <sphere radius="0.04"/>
+          <sphere radius="0.05"/>
         </geometry>
       </collision>
       <xacro:inertial_sphere mass="0.1" radius="0.04">
@@ -125,6 +137,11 @@
       </xacro:inertial_sphere>
     </link> 
 
+    <gazebo reference="caster_wheel_1">
+      <material>Gazebo/Orange</material>
+      <mu1 value="0.001"/>
+      <mu2 value="0.002"/>
+    </gazebo>
 
     <!-- CASTER WHEEL 2-->
     <joint name ="caster_wheel_2_joint" type="fixed">
@@ -136,18 +153,24 @@
     <link name="caster_wheel_2">
       <visual>
         <geometry>
-          <sphere radius="0.04"/>
+          <sphere radius="0.05"/>
         </geometry>
         <material name="orange"/> 
       </visual>
       <collision>
         <geometry>
-          <sphere radius="0.04"/>
+          <sphere radius="0.05"/>
         </geometry>
       </collision>
       <xacro:inertial_sphere mass="0.1" radius="0.04">
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </xacro:inertial_sphere>
     </link> 
+
+    <gazebo reference="caster_wheel_2">
+      <material>Gazebo/Orange</material>
+      <mu1 value="0.001"/>
+      <mu2 value="0.001"/>
+    </gazebo>
 
 </robot>
